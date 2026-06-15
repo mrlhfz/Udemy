@@ -1,0 +1,96 @@
+# HTML - Hyper Text Markup Language
+
+opening tag - <h1>
+closing tag - </h1>
+
+heading - <h1></h1> > <h6></h6>
+* not a good practice to have more than 1 <h1>
+* dont skip
+
+paragraph - <p></p>
+
+void elements - self-closing tag 
+* eg: <hr /> - horizontal rule
+* eg: <br /> - break line
+
+unordered list <ul></ul>
+* includes <li></li> inside for contents
+
+ordered list <ol></ol>
+* includes <li></li> inside for contents
+
+indentations - helps in reading the code
+
+anchor elements <a></a>
+* hyperlink <a href="target"><a>
+
+HTML attr <tag attr="value">content<tag>
+
+image tag 
+* <img src="url" alt="describe img" />
+* lorem ipsum for photos src="https://picsum.photos/200" 200 refers to size
+* alt = alternate text description 
+
+# Multi-Page Websites
+
+Absolute v Relative File Paths
+* absolute - eg. C:/Project/Images/cat.png
+* relative - based on the current folder, always valid
+
+Special characters
+* up a level ../essay.docx
+* look in current directory ./dog.png
+
+((always use relative file paths to navigate through folders))
+
+# HTML Boilerplate (Default)
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Title</title>
+	</head>
+	<body>
+		<h1></h1>
+	</body>
+</html>
+
+* press !, to instantly have the boilerplate in .html file
+
+# Web Hosting
+
+local development > web server > internet
+
+create new repo > add readme > create repo > add file > add contents (not the whole folder) 
+> commit changes > settings > pages > branch: main > save
+
+# Capstone Project
+* can be added to your portfolio
+
+# Notes:
+
+* value attr in <li></li> - start with what number
+* section element - <section></section>
+* article element - <article></article> represents a section of content that forms an independent part of a document or site
+* <span></span> - different style by default
+* <table></table> - only to be used to tabulate data
+* <html lang="en" data-bs-theme="dark"></html> - for dark mode w/ bootstrap
+* <form action="https://freecodecamp.org/practice-project/accessibility-quiz" method="post">
+* role - attribute is a part of the Web Accessibility Initiative (WAI), and accepts preset values.
+* adding a label is to add a heading element inside the region and then reference it with the aria-labelledby attribute.
+* <label for="student-email">Email:</label>
+  <input id="student-email" />
+* same name for multiple type radio input, allows only one to be able to select
+* dropdown options
+** <select>
+	<option value="">Select an option</option>
+    	<option value="yes">Yes</option>
+     	<option value="no">No</option>
+   </select>
+* required attr to force user to fill
+* link label to options using for, name id
+* The accesskey attribute accepts a space-separated list of access keys. Give each of the navigation links a single-letter access key.
+
+
+

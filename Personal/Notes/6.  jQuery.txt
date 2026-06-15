@@ -1,0 +1,66 @@
+# jQuery
+
+* document.querySelector('h1') = $('h1')
+* needs to be above js script in html
+* safeguard start w/ $(document).ready(function() { code }); || put scripts at the end of website
+* minify to make webpage to run faster
+
+* Selector
+** querySelector('h1') = $('h1')
+** querySelectorAll('button') = $('button')
+
+* Manipulating Style
+** $('h1').css('color'); // get color(property)
+** $('h1').css('color', 'red'); // set color(property) to red(value)
+** $('h1').addClass('class-name another-class-name'); // adds class to element
+** $('h1').removeClass('class-name another-class-name'); // removes class from element
+** $('h1').hasClass('class-name'); // return boolean
+
+* Manipulating Text
+** .text('new text') = .innerText
+** .html('<newelement>new text</newelement>') = .innerHTML
+
+* Manipulating Attr
+** .attr('src'); // get src(attr)
+** .attr('href', 'https://') // set href(attr) to https://(value)
+** .attr('class') //return classes in said element
+
+* Add Event Listener
+** .click(function() { code };
+** to all buttons
+*** for (var i=0; i<5; i++) {
+***   document.querySelectorAll('button')[i].addEventListener('click', function() {
+***     document.querySelector('h1').style.color = 'purple';
+***   });
+*** }
+** is the same as
+*** $('button').click(function() {
+***   $('h1').css('color', 'purple');
+*** });
+** .keyup(function(e) { code }
+** $(document) // selects the entire document
+** .on('event', function() { code });
+
+* Adding and Removing Element
+** (add) .before('<button>new</button>'); create .innerHTML before the selected element
+** (add) .after - create .innerHTML after the selected element
+** (add) .prepend - attach created .innerHTML just after the opening of the tag
+** (add) .append - attach created .innerHTML just before the closing of the tag
+** (remove) .remove(); // remove selected element
+
+* Website Animation
+** .hide(); // hide selected element
+** .show(); // show selected element
+** .toggle(); // click(event) to hide, and another click to show
+** .fadeOut(); // fade out of the webpage
+** .fadeIn(); // fade into the webpage
+** .fadeToggle(); = toggle but fade
+** .slideUp(); // collapse upwards
+** .slideDown(); // uncollapse downwards
+** .slideToggle(); = toggle but slide
+** .animate({opacity: 0.5(new css rule)}); only css code w/ numeric value
+** chain to get multiple animation - .slideUp.slideDown.animate({opacity: 0.5});
+
+
+JS IS ALL ABT BEHAVIOUR OF WEBPAGE
+

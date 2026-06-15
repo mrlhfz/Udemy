@@ -1,0 +1,98 @@
+JS framework that allows us to do backend for website.
+
+Why ExpressJS?
+
+* readability
+* less code 
+* middleware
+
+Express Server
+
+* npm init //initialize npm
+* npm i express //install express
+* package type module
+* import express from "express" 
+* write server app in index
+** import express from "express";
+   const app = express();
+   const port = 3000; //location of server
+
+   app.get("/", (req, res) => {
+     res.send("Hello");
+   });
+
+   app.listen(port, () => {
+     console.log(`Server running on port ${port}.`); //callback
+   });
+* localhost - dont have a server on the internet, instead want to host our server locally. (localhost:3000(port))
+* port - doors inside our computer
+
+HTTP Request
+* = hypertext transfer protocol - language for computers to communicate with each other
+* get - request resource from server (text, website, data, etc)
+* post - sending resource to server
+* put - update methods (replacing existing data)
+* patch - update methods (patching new data to existing data)
+* delete - removes existing resource
+
+* replace node w/ nodemon to stop needing to restart server when theres change
+* / - endpoint - localhost:3000/
+** /about - localhost:3000/about //show about me page
+
+* HTTP response status code (eg 404 error - example of client side error)
+** informational responses 100 - 199 "hold on"
+** successful responses 200 - 299 "here you go"
+** redirection responses 300 - 399 "go away"
+** client error responses 400 - 499 "you fucked up"
+** server error responses 500 - 599 "i fucked up"
+
+POSTMAN
+* doing backend w/o frontend
+
+MIDDLEWARES
+* preprocess requests - change aspects of the request or perform various functions before it goes to final routing
+* log requests - duration, type, status etc
+* authentication purposes
+* process errors in the requests
+* eg BODY PARSERS - parse incoming request bodies in a middleware before your handlers
+* pay attention to the order that you arrange your middleware
+
+//in HTML
+<form action="/login" method="POST"> //action to determine route //method is how you want your data to be processed
+  <label for="email">email</label>
+  <input type="text" name="email" required> //label and input are usually a pair //for and name needs to match
+  <label for="password">password</label>
+  <input type="text" name="password" required>
+  <input type="submit" value="submit">
+</form>
+
+* public folder is where you store static files(html, css, images, etc) that dont really change and dont need to be acted upon
+* res.sendFile(__dirname(exact location of folder/files) + "/public/index.html");
+//code to use __dirname (dynamically set the file path)
+import { dirname } from "path";
+import { fileURLToPath } from "url";
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+BODY-PARSER //lesson 204
+* npm i body-parser
+* import bodyParser from "body-parser"
+* app.use(bodyParser.urlencoded({ extended: true}); //urlencoded when dealing with html form
+
+MORGAN
+* morgan - middleware for logging requests that come into your server
+* npm i > import > .use(morgan("combined")); //combined is predefined format
+
+CUSTOM MIDDLEWARE
+app.use((req, res, next) => {
+  console.log("Request method: ", req.method));
+    next(); //determines when should we move on from middleware
+});
+
+
+
+
+
+
+
+
+

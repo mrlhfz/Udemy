@@ -1,0 +1,214 @@
+# JS - JavaScript
+
+## JS Introduction
+
+* scripting - telling the computer what it should do
+* js(interpreted) v java(compiled)
+* js supported by all web browser
+* alert("hello"); = function("string")end
+
+* Data Types
+** way of classifying data
+** string - ""
+** number
+** boolean - true/false
+
+* Variable
+** commit pieces of data  into computer's memory
+** var myName = "Amirul"; = keyword(create new data container) name = "value";
+*** reassign the value by myName = "Hafiz"; name = "new value";
+*** dont need to repeat the var because its only used to create the container
+
+* Naming Var
+** always give meaningful names to your var
+** name cannot be keyword/start with number/contain space
+** abc123&_ only and camelcase
+
+* Strings
+** concactenation - +
+** figure out the number of char - .length
+** slice out char of var from index x to but not include index y - .slice(x,y)
+*** Amirul .slice(0,1); A .slice(0,3); Ami
+** changes all char in str to uppercase - .toUpperCase()
+** changes all char in str to lowercase - .toLowerCase()
+
+* Numbers
+** + - * / %(remainder)
+** use parantheses as good practice
+** x = x + 1; = x++; (also work w/ --)
+** x = x + 2; x += 2; (also work w/ -= *= /=)
+
+* Functions 
+** take a series of code and package it to make a function
+** function functionName () { codes(instructions); }
+** call funcion: functionName();
+** function functionName (inputName(can be 2)) { codes(instructions); }
+*** parse in input in inputName, and use inputName in code
+** return - to ouput (in function)
+*** set the output(return) of a function as value to var by setting functionName(inputNmae) as value to new var (lesson 99)
+** functions can be used in other functions
+
+## JS Intermediate
+
+* Random Number Generation
+** var n = Math.random(); generates 0 to < 1
+* if-else conditionals
+** if (value === condition) {doSth();}
+   else {doSthElse();}
+* comparators
+** === equal to (check data-type) | == equal to (ignore data-type)
+** !== not equal to
+** > greater than
+** < lesser than
+** >= greater or equal
+** <= lesser or equal
+* combining comparators
+** && AND
+** || OR
+** ! NOT
+
+* Array
+** like var, but instead of 1 item theres multiple item.
+** store in same container and the same variable.
+** var container = [a,b,c]
+*** retrieve: var myContainer = container[0] //a
+*** position using index
+** count items inside array using .length
+** .includes(item) - to find out if the array includes the mentioned item
+*** is boolean
+** .push(item) - push item to the end of the array
+** .pop(item) - removes item from the end of the array
+
+* Loops
+** while loop (as long as true, stay in loop) (checking for a state)
+*** var i = 1;
+    while (i<2) { (first run: true, carry out code. second run: false, exit loop)
+      console.log(i);
+      i++;
+    }
+** error prone
+** for loop: for(i=0(start); i<2(end); i++(change)) {code;} (iterate, how many times loop should go)
+*** check snippet fibonacciGenerator.js
+
+* DOM
+** internal - <script></script>
+** position inside html is important, script needs to position after html(right before end of body)
+** external - <script src="./index.js" charset="utf-8"></script>
+** always represented as a tree w/ document as parent
+*** access elements classes ids by document.querySelector("elements/.classes/#id/li a(anchor tag inside li)")
+**** if identified more than one, will only show first
+**** to show all - document.querySelectorAll
+*** access by tag name - document.getElementsByTagName("li")[2].style.color = "purple" (select tagname li w/ index number 2(because array) to change its color to purple)
+*** access by class - getElementsByClassName
+*** access by id - getElementById
+** get property - eg car.colour;
+** set property - eg car.numberOfDoors = 0;
+** call method - eg car.drive(); 
+*** diff between method and function is method is for object (eg buttons)
+
+* Manipulating/Changing Style in HTML
+** .style.color - change text color
+** .style.fontSize - change font size
+** value passed needs to be a str
+
+* Seperation of Concerns
+** HTML - contents only
+** CSS - style only
+** JS - behaviour only
+** .classList - list of class of selected query
+** .classList.add("") - add class to element 
+** .classList.remove("") - remove class from element
+** .classList.toggle("") - remove if already applied, vice versa.
+
+* Manipulate Text in HTML
+** .innerHTML - everything inside html element
+*** can also add html element inside current html element
+** .textContent - text inside html element
+
+* Manipulate Attr in HTML
+** .attributes - gets list of attr
+** .getAttribute("name of attr"); get attr
+** .setAttribute("name of attr", "change attr to"); set attr
+
+* Add Event Listener
+** target.addEventListener(type, listener); type is a str, listener is a js function
+*** function in listener section should not have () at the end if theres nothing to pass into it (Lesson 136)
+** anonymous function - function () {code;}
+
+* Higher Order Function & Passing Function as Argument
+** higher order functions - function that can take other function as inputs
+** $0; = document.querrySelector('h1');
+** debugger; shift enter function and see step by step process
+** this - get the identity that triggers the event
+
+* Add Audio To Event Listener
+** var audio = new Audio('url');
+** audio.play();
+
+* Switch Statement
+** switch (expression) {
+     case (expression):
+       break;
+     default:
+}
+
+* Object (check snippets object.js)
+** instead of
+*** var bellBoy1Name = 'Timmy';
+   var bellBoy1Age = 19;
+   var bellBoy1HasWorkPermit = true;
+   var bellBoy1Languages = ['French', 'English']
+** do this (object)
+*** var bellBoy1 = {
+     name: 'Timmy',
+     age: 19,
+     hasWorkPermit: true,
+     language: ['French', 'English']
+   }
+** call by bellBoy1.name; (dot notation)
+** make another var w/ the same properties
+*** function player(name, ign, age, mainYoru, comfortRole) {
+     this.name = name;
+     this.ign = ign;
+     this.age = age;
+     this.mainYoru = mainYoru;
+     this.comfortRole = comfortRole;
+     this.clean = function() {
+	alert('Cleaning');
+     }
+   }
+
+* Keyboard Event Listeners
+** document.addEventListener('keypress', function() { //added event listeners to the whole html
+     alert('Key was pressed');
+   });
+*** pass event/e as params to tap into the event that triggered the event listener
+
+* Callback Function
+** functions that is called in another functions as input/params
+*** wait for other function to complete before carrying out its function
+
+* Adding Animation 
+** adding html class with desired css properties via .querySelector
+** setTimeout (function, miliseconds, param1, param2, ...)
+
+Notes:
+* alert("hello"); = function("string")end
+* prompt("What is your name?") - like alert but enable user to kick in data
+* var yourName = prompt("what is your name?"); asking for users name and store it in var
+* alert("My name is " + myName + ", welcome to my page " + yourName + "!"); 
+* hard reload and empty cache to clear data stored in browser
+* // - singleline comment
+* /**/ - multiline comment
+* console.log() to print out part of the code into the console
+* use flow chatrt to get the logic behind the code
+* [] collection data type
+* iife - use type="module" so its loaded first
+* search - qryStr = new URLSearchParams(window.location.search)
+* space in qryStr = %20
+* .trim() remove white spaces at start and end
+* blur -foxus counterpart
+* initialise object w/ null, str w/ ''
+* in const ALL CAPS
+* (condition) ? expression on true : expression on false //shorten version of if statement
+* .forEach() method calls a function for each element in an array.

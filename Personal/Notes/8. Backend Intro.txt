@@ -1,0 +1,13 @@
+What is backend?
+* Server - for a live website needs to be on 24/7
+* Application - logic that runs on the server (how the browser responds to any request from user)
+* Database - to store user data
+
+WebApp 
+restaurant(clients) - kitchen(server) - pantry(database)
+
+Technologies 
+* doesnt matter
+
+
+

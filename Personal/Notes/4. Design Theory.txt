@@ -1,0 +1,55 @@
+# WEB DESIGN
+
+* design is the cheapest ways to make your company/product look expensive
+
+# COLOR THEORY
+
+* be aware of the mood of the colour palatte of your designs
+** red - love. energy. intensity. (eg. car ads)
+** yellow - joy. intellect. attention. (really attention grabbing: logo/headline)
+** green - freshness. safety. growth. (eg. grocery companies)
+** blue - stability. trust. serenity. (eg. finance companies)
+** purple - royalty. wealth. femininity. (eg. target audience: women)
+* how to combine colors
+** analogous - 2 colors right next to each other (eg. navbar, body, logo/background)
+** complementary - 2 colors on opposite ends of the colour wheel (eg. to make logo pop/stand out, not for text/text background)
+** triadic(triangle)
+** square
+** use adobe color/colorhunt.co for color combo
+
+# TYPOGRAPHY
+
+* serif(feet) - more serious, older, authoritative (mood: traditional, stable, respectable)
+* sans serif - more readable (mood: sensible, simple, straightforward) for body texts
+* script - (mood: personal, creative, elegant)
+* display - (mood: friendly, loud, amusing)
+* modern - (mood: stylish, chic, smart)
+* only 2 fonts in one design with similar moods and time era
+* contrast in serif-ness and font-weights
+
+# USER INTERFACE DESIGN
+
+* bigger/bolder/squarer > smaller/slimeer/rounder to define heirarchy of texts
+* color that pop = more important
+* layout - different sizes/contrast/shapes to determine heirarchy and make design look more interesting (good layout: grammarly)
+* 40-60 characters per line
+* lessen number of line of the beginning of content (grid lines)
+* white space - empty space around content to make it look more expensive
+* design for your audience
+
+# USER EXPERIENCE DESIGN
+
+* design to make things look good / ux what user actually use/need (feels like everything is easy)
+* Simplicity
+** consistent color scheme/typography
+* Consistency
+** make design and funtionality consistent (eg. navbar the same in all part of the page)
+* Reading Patterns
+** F layout - start left (bullet points/pictures/icons) (w/ text content)
+** Z layout - (w/ video content)
+* All Platform Design
+** make web mobile responsive, vice versa
+** dont make websites w/ so many banners that make phone versions contents and buttons impossibly small
+** TEST, TEST, TEST
+* Dont Use Powers For Evil
+** dark patterns - get a user to carry out action/behaviour against their wants

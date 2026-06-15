@@ -1,0 +1,14 @@
+UNIX Command Line
+
+ls - list all folders inside dir
+mkdir - make a new folder
+cd - changing directory
+cd ~ - cd to root 
+cd .. - cd back one level
+touch - create a new file eg. touch note.txt
+open - open file eg. open note.txt
+     - open via app eg. open -a /APP DIRECTORY.app note.txt
+rm - delete file eg. rm note.rtf
+   - delete all eg. rm *
+rm -r folder - delete folder
+pwd - print working directory

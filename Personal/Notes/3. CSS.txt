@@ -1,0 +1,353 @@
+# CSS - Cascading Style Sheets
+
+((property: value;))
+
+# How to add CSS
+
+* inline - <html style="background: blue"></html>
+	 - 1 element
+* internal - <style>
+	       html {
+	         background: red;
+	       }
+	     </style>
+	   - 1 webpage 
+* external - similar format as internal, but in a completely different file
+	   - <link rel="stylesheet" href="./styles.css" />
+	   -1 website
+
+# CSS Selectors
+
+* element selector - h1/a/p {
+		       prop: value;
+		     }
+* class selector - .class {
+		     prop: value;
+		   }
+		 - grouping element in html file to apply same css rule
+* id selector - #id {
+	          prop: value;
+	        }
+	      - diff w/ class: id - 1 element in a html file, class - many elements in a html file
+* attr selector - eg. p[draggable="false"] {
+		        prop: value;
+		      }
+* universal selector - * {
+		         prop: value;
+		       }
+
+# CSS Colors
+
+*  name colors - eg. red, blue, etc
+* hex code - #NNNNNN
+* rgba - 
+
+# Font Properties
+
+* font-size - 1px (1/96th inch)
+	    - 1pt (1/72nd inch)
+	    - 1em (100% of parent element)
+	    - 1rem (100% of root) > remains the same even if parent's size is edited
+	    - named font-size: small, large, xx-large
+
+* font-weight - normal/bold (keywords)
+	      - lighter/bolder (relative to parent)
+	      - number (100-900)
+
+* font-family - format: font-family: helvetica(specific),sans-serif(generic)
+	      - "Times New Roman"(quote fonts w/ multiple words)
+	      - fonts from fonts.google.com (copy link, paste after </style>)
+
+* text-align - 
+
+# Box Model
+	
+* can adjust width/height w/ px or %
+* border: 10px(thickness) solid(style) black(color);
+** further modify - border-top: 0px; (makes the original border to not have top)
+** or modify all sides - border-width: 0px(top) 10px(right) 20px(bottom) 30px(left);
+** or modify opp sides - border-width: 0px(top/bottom) 10px(left/right)
+* padding(push border out away from contents)
+* margin(from border to any other contents in websites
+*padding/margin can be modified like border
+
+
+# Content Division
+
+* <div></div> - group up elements to be styled as one
+
+# Cascade
+
+4. position - the lower position, the more important
+3. specificity - element < class < attribute < id
+2. type - external < internal < inline
+1. importance - normal (color: red;)
+	     - important (color: red !important;)
+
+# Combining CSS Selector
+
+* p inside inner-box, change text color - .inner-box p {}
+* group - comma(,) selector1, selector2 {}
+* child - morethan(>) selector-parent > selector-child {} (directly 1 level inside parent)
+* descendant - space( ) selector-ancestor selector-descendant {} (apply to a descendant of left side: any level)
+* chaining - no space() selectorselector element.class#id (apply where ALL selectors are true) 
+* combine combiners - selector selectorselector
+
+# CSS Positioning
+
+* static - HTML default flow
+* relative(position: relative;) - relative to default position
+* absolute(position: absolute;) - position relative to nearest positioned ancestor or top left corner of webpage
+* fixed(position: fixed;) - relative to the top left corner of browser window eg ads on webpage
+* Z-index
+** z-axis position of the element
+** decide which element is in front or at the back
+
+# CSS Display
+
+* display: block; is default(except <span></span>)
+* block - take up entire full width
+* inline - into the same line (cant set the width and height of content)
+* inline-block - like inline but can set width and height
+* none - makes object disappear
+
+# CSS Float 
+
+html: <img...>
+      <p>text...</p>
+      <footer>foot...</footer>
+css: img {
+       float: left(or right);
+     }
+     footer {
+       clear: left(or right or both);
+     }
+* the img text will wrap around the image (reverse L-shape)
+* footer will not be affected by float
+* only use float when wrapping text around img
+
+# Responsive Webites
+
+* makes website looks good in any device
+* media queries
+** @media (max-width: 600px(breakpoint)) {
+     /* CSS for screens below or equal to 600px wide */
+   }
+** turns navbar into burger
+* css gridbox
+** html - <div class ="grid-container">
+            <div class="first card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+          </div>
+** css - .grid-container {
+	   display: grid;
+	   grid-template-columns: 1fr 1fr;
+	   grid-template rows: 100px 200px 200px;
+	   gap: 30px;
+	 }
+	 .first {
+	   grid-column: span 2;
+	 }
+	 .card {
+	   background-color: blue;
+	 }
+** .grid-container: 2 columns w/ 1fr width each
+		    3 rows w/ diff height
+		    30px gap
+** .first: span 2 = the width of 2 columns
+** 2D layouts
+* css flexbox
+** html - <div class ="flex-container">
+            <div class="first card"></div>
+            <div class="second card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+          </div>
+** css - .flex-container {
+	   display: flex;
+	 }
+	 .card {
+	   background-color: blue;
+	   border: 30px solid white;
+	   height: 100px;
+	   flex: 1;
+	 }
+	 .first {
+	   flex: 2;
+	 }
+	 .second {
+	   flex: 0.5;
+	 }
+** 1D layouts(horizontal/vertical)
+* bootstrap
+** external framework
+** html - <div class="container">
+	    <div class="row">
+	      <div class="card col-6(takes up 6 columns/half of the page)">
+	        Card
+	      </div>
+	      <div class="card col-2(takes up 2 columns">
+	        Card
+	      </div>
+	      <div class="card col-4(takes up 4 columns">
+	        Card
+	      </div>
+	    </div>
+	  </div>
+
+# Media Queries
+
+* max-width/min-width to determine breakpoint
+* make range by combining min-width and max-width
+* screen(orientation: landscape) - not recommended
+
+# CSS Flexbox
+
+* wrap div inside container, target cotainer and set display to flex (100% width)
+* flex dont follow inline, block, inline-block rule.
+* inline-flex - makes a block to let other content be in the same line
+	      - just enough space for the content
+* align content in 1D layout
+* eg. to be used to make a navbar
+
+# Flex Direction
+
+(parent)
+* flex-direction: row (default on main-axis(x) cross-axis(y))
+* flex-direction: column (main-axis(y) cross-axis(x)
+
+(child)
+* flex-basis: NNpx - height of main axis (go to child)
+
+# Flex Layout
+
+(parent)
+* flex-wrap: nowrap; - continue inline even lacking space (default)
+* flex-wrap: wrap; - when lacking space, content continue in a new line
+* flex-wrap: wrap-reverse; - same as wrap, but at the opposite side of cross-axis
+* justify-content(main-axis): flex-start; - content at the start of the container
+* justify-content: flex-end; - content at the end of the container
+** other: center/space-between/space-around/space-evenly
+* align-item(cross-axis) 
+* align-content(only works when flex-wrap: wrap;)
+* flex-flow(combi of flex-direction + flex-wrap): column wrap;
+
+* wrap - align-content
+* nowrap - align-items
+
+(children)
+* order: 0; (default)
+* order: NN; - bigger NN, more right
+* align-self(cross-axis)
+
+# Flex Sizing
+
+* priority: content width < width < flex-basis < min/max-width
+* flex-grow: 1; (is ON)
+* flex-shrink: 0; (is OFF)
+* flex: 1(grow) 1(shrink) 0(basis(set to 0 for equal width)); = flex: 1; (1(grow) 1(shrink) 0(basis))
+
+# CSS Grid
+
+* To make 2D layout
+* Can be combined with other things like flex, bootstrap, float etc
+* Flex inside grid and grid inside flex is normal
+* .container {
+    display: grid;
+    grid-template-columns: 1fr 2fr; (1:2 ratio)
+    grid-template-row: 1fr 1fr; (1:1 ratio)
+    gap: 10px;
+  }
+* fixed size grid is not responsive (px, pt, rem etx) 
+* grid-template: 1fr 1fr(row) / 1fr 1fr(column)
+* auto: width(column) - grid will try to fill 100% available space
+	height(row) - grid will try to fit the content
+* minmax - eg. grid-template-columns: 200px minmax(400px, 800px)
+* repeat - eg. grid-template-columns: repeat(2, 200px); = 200px 200px;
+* grid-auto-rows/columns: NNpx; (new row/columns that doesnt fit our grid, give NNpx height/width)
+
+# Grid Placement
+
+* grid containers contain grid items contain grid cells
+* grid lines separating grid cells
+* grid-column(/grid-row) contains(:span 2): + eg. grid-column: NN//span(start) / NN//span(end)
+** grid-column-start: 2(grid1 empty, grid start in grid2)
+** grid-column-end: -1(the grid will send before entering the row below)
+* grid-area: NN(row-start) / NN(column-start) / NN(row-end) / NN(column-end)
+** all items need to use grid area if 1 uses grid area
+* grid lets a content overlay other content (adjust transparency in color)
+* grid-template: NN NN(grid-template-rows) / NN NN(grid-template-columns)
+
+# Bootstrap
+
+* CSS framework - premade CSS files to include in your codes
+* How?
+** include via CDN <link> into <head> / <script> before </body>
+* can be overwrite by styling more specifically (inline/internal)
+* 12 column layout system
+** <div class="container">
+     <div class="row">
+       <div class="col">Word</div>
+     </div> 
+   </div>
+** multiple columns - auto fit 
+* Bootstrap container
+** to have diff size on diff size screen
+** eg. .container-sm(-md/-lg/-xl/-xxl) to decide on which reso do you want it to be 100%
+** container fluid - 100% width on all reso
+** decide size of col(-2/-6/etc)
+** sm - mobile / md - ipad / lg - laptop / xl - desktop / xxl - TV
+** can have multiple breakpoints in a single div
+* examples - to see bootstrap used (inspect > copy element)
+* icons - copy .svg use it as img in code
+* layout classes, components classes, utility classes
+* spacing - mt-5(margin-top 5(0-5/auto) p(padding) b(bottom) s(start(left)) e(end(right)) x(top-bottom) y(left-right)
+
+(YOU CAN SELL BOOTSTRAP TEMPLATES)
+
+# Notes:
+
+* add url to .css - url(https://website)
+* to make 2 elements inline - .sth #sth sth {
+			        display: inline-block;
+			      }
+* can try CSS adjustments on websites via inpect
+* CSS overviews in more tools inspect to know web's color palette and fonts
+* 1 element can have multiple class by class="class1 class2"
+* make a circle/rounded-corner - border-radius: 50%(circle)/etc
+* pseudo-selector - a:visited{} (if link is visited)
+		  - a:hover{} (if cursor hover over link)
+		  - a:active{} (link is actually being clicked)
+* object-fit - adjust img fit in div
+* gap: NN; gap between object
+* li {list-style: none;} - hide bullet/numbering
+* vh - viewport height
+* overflow: hidden (?)
+* filter: blur(2px);
+* box-shadow: 0 0 3px 3px #efb762;
+* transform: rotate(-0.6deg); counter clockwise by 0.6 degrees.
+* box-sizing: content-box; border doesnt follow size of content
+** : border-box; border follow size of content
+* text-transform: uppercase;
+* object-fit: cover; tell the image to fill the img container while maintaining aspect ratio, resulting in cropping to fit.
+* .container::after - pseudoelement to add empt element after last img
+* font-family: 'Open Sans', sans-serif; = "used", fallback;
+* letter-spacing: 0.15px;
+* :not pseudo-selector can be used to select all elements that do not match the given CSS rule.
+* img {width: max(250px, 25vw);}
+* margin: top right bottom left;
+* The @media at-rule has a media feature called prefers-reduced-motion to set CSS based on the user's preferences. It can take one of the following values:
+** reduce
+** no-preference
+** @media (feature: value) {
+     selector {
+       styles
+     }
+   }
+
+
+TRAIN IN DAILYUI
+

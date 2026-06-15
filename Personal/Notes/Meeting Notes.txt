@@ -1,0 +1,68 @@
+Notes: 
+
+//
+always fetch main to lessen conflict
+
+git merge main
+container-fluid takes the entire screen
+
+note what do we need to change
+dont intend to change file - dont save
+
+
+
+//
+xll - experience logic layer - js for ui
+bll - business logic layer - 
+dal - data access layer
+
+<script src+"./" type="module">
+
+type=module will automatically be local scope, no other internal js
+put ones that needs to be global in global
+
+IIFE - immediately invoked function expression
+(function () {
+  alert('hello')
+})();
+* force execute at startup of the page is loaded
+* var is not accessible in other function 
+
+query string 
+* name-value pair
+
+.focus() - cursor auto on the object - js
+make otp style text box - css**
+move to next box after each char 
+enable pasting
+login disabled until 6-digit otp is entered - css** js
+each textbox for 1 char only - css**
+
+add branch in project **
+
+// 19/2
+json - js object notation
+class - defines an object
+object - may contain properties, functions, events and private, public, static
+running object - instance of an object
+mock fata only have properties
+only datastore connect with the mock data
+
+// 4/3
+fields - var for class, not too long and self explanatory
+* public - whoever using the class can see
+* private - only the class can see it
+* dont need to start with var, let, const
+read-only - no edit
+read-write - editable
+if the input can be an empty str, either the output is valid or invalid, its okay to init as empty str (0:10:00)
+
+
+homework
+- authenticate.js - function authenticate invite code (invRefID, inviteCode)
+** // loop through invites
+** // find invite that matches invRefID
+** // compare the inviteCode
+** // return true if equal, else false
+- import datastore module
+

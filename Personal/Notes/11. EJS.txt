@@ -1,0 +1,53 @@
+EJS - Embedded JS (Templating Language)
+
+* re-render js file according to what is filled in the form
+
+How does EJS work?
+* like having a JS module that can run inside HTML file
+* file.ejs
+* res.sendFile is for static file
+* use res.render, specify the file to render, add js object to pass key:value
+** app.post("/submit", (req, res) => {
+     res.render("index.ejs",
+     { name: req.body["name"] }
+   });
+** //return
+   <body>
+     <h1>
+       Hello <%= name %> // use key
+     </h1>
+   <body>
+
+EJS TAGS
+* <%= variable %> - JS + output
+* <% console.log("Hello") %> - JS + execute (no output)
+* <%- <h1>Hello</h1> %> - show <% or %> (render HTML)
+* <%%  %%> - escape EJS tags (show EJS tags)
+* <%# This is a comment %> - stop execution (comment)
+* <%- include("header.ejs") %> - insert another EJS file
+
+PASSING DATA
+Server to EJS
+* res.render("index.ejs", (data) {key: value})
+No Data
+* EJS does not check for boolean conditionals
+** instead use res.locals= {key: value} in JS
+** and use if(locals.key) in EJS to check for boolean
+EJS to Server
+* res.render("index.ejs", 
+	{ name: req.body["name"] }
+  ); //saving data from EJS
+
+PARTIALS AND LAYOUTS 
+* reusing ejs codes
+* for layouts - <link rel="stylesheet" href="/styles/layout.css">
+* app.use(express.static("public") //telling ejs where is the static folder
+* partials - eg header and footer //content that remains the same across the entire website
+** use partials - include("partials/file.ejs")
+* link to different pages in the website - href="/about" in nav-link
+* location of file is relative to /views folder
+
+
+
+ 
+

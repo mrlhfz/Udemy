@@ -4,8 +4,9 @@ const app = express();
 const port = 3000;
 
 function logger(req, res, next) {
-  console.log(req.method);
-  console.log(req.url);
+  res.on("finish", () => {
+    console.log(`${req.method} ${req.url} ${res.statusCode}`);
+  });
   next();
 }
 

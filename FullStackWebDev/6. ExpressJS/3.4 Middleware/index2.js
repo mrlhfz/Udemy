@@ -5,7 +5,7 @@ const port = 3000;
 
 //use morgan
 import morgan from "morgan"
-app.use(morgan("tiny"));
+app.use(morgan("dev"));
 
 app.get("/", (req, res) => {
   res.send("Hello");

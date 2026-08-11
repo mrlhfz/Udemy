@@ -1,5 +1,6 @@
 import express from "express";
-import { dirname } from "path";
+//completing the path dynamically for .sendFile to work
+import { dirname } from "path"; 
 import { fileURLToPath } from "url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 

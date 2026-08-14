@@ -8,7 +8,18 @@
 </head>
 
 <body>
-  <!-- Write your code here -->
+  <!--
+    1. show default header on start.
+    2. post: show '(number) letters in your name'
+    3. index.js takes the names and calc length
+    4. pass length back to index.ejs to show
+  -->
+  <% if (length !== null) { %>
+    <h1>Your name have <%= length %> letters.</h1>
+  <% } else { %>
+    <h1>Enter your name:</h1>
+  <% } %>
+
   <form action="/submit" method="POST">
     <input type="text" name="fName" placeholder="First name">
     <input type="text" name="lName" placeholder="Last name">
